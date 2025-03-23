@@ -34,7 +34,7 @@ dt_model.fit(X_train, y_train)
 y_pred_dt = dt_model.predict(X_test)
 dt_accuracy = accuracy_score(y_test, y_pred_dt)
 
-print(f"[A 작업자] Decision Tree Accuracy: {dt_accuracy:.4f}")
+print(f"Decision Tree Accuracy: {dt_accuracy:.4f}")
 
 ####### B 작업자 작업 수행 #######
 
@@ -49,4 +49,4 @@ xgb_model.fit(X_train, y_train)
 y_pred_xgb = xgb_model.predict(X_test)
 xgb_accuracy = accuracy_score(y_test, y_pred_xgb)
 
-print(f"[B 작업자] XGBoost Accuracy: {xgb_accuracy:.4f}")
+print(f"XGBoost Accuracy: {xgb_accuracy:.4f}")
