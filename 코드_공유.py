@@ -34,4 +34,19 @@ dt_model.fit(X_train, y_train)
 y_pred_dt = dt_model.predict(X_test)
 dt_accuracy = accuracy_score(y_test, y_pred_dt)
 
-print(f"[A 작업자] Decision Tree Accuracy: {dt_accuracy:.4f}")
+print(f"Decision Tree Accuracy: {dt_accuracy:.4f}")
+
+####### B 작업자 작업 수행 #######
+
+from xgboost import XGBClassifier
+from sklearn.metrics import accuracy_score
+
+# XGBClassifier 모델 생성 및 학습
+xgb_model = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss', random_state=42)
+xgb_model.fit(X_train, y_train)
+
+# 예측 및 평가
+y_pred_xgb = xgb_model.predict(X_test)
+xgb_accuracy = accuracy_score(y_test, y_pred_xgb)
+
+print(f"XGBoost Accuracy: {xgb_accuracy:.4f}")
